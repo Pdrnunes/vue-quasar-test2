@@ -7,7 +7,8 @@
         <button @click="deleteTask(index)">X</button>
       </li> -->
       <task v-for="(task, index) in tasks" :key="task.id"
-      :task="task" :index="index"></task>
+      :task="task" :index="index">{{task.name}}</task>
+      <!-- by referencing task name here now i the child component can access this by using a slot -->
       <!-- in vue 3 i have to reference the key, the task and the index that will be used in FOR -->
     </ul>
   </q-page>

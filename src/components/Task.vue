@@ -1,6 +1,7 @@
 <template>
   <li>
-    <div>{{task.name}} {{index}}</div>
+    <div><slot></slot> {{index}}</div>
+    <!-- the task.name will be distributed here due to the slot tag -->
     <small>{{task.dueDate}} @ {{task.dueTime}}</small>
     <button @click="deleteTask()">X</button>
   </li>
