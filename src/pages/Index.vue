@@ -1,11 +1,14 @@
 <template>
   <q-page padding>
     <ul>
-      <li v-for="(task, index) in tasks" :key="task">
+      <!-- <li v-for="(task, index) in tasks" :key="task">
         <div>{{task.name}} {{index}}</div>
         <small>{{task.dueDate}} @ {{task.dueTime}}</small>
         <button @click="deleteTask(index)">X</button>
-      </li>
+      </li> -->
+      <task v-for="(task, index) in tasks" :key="task.id"
+      :task="task" :index="index"></task>
+      <!-- in vue 3 i have to reference the key, the task and the index that will be used in FOR -->
     </ul>
   </q-page>
 </template>
@@ -38,6 +41,9 @@ export default {
       this.tasks.splice(index, 1) /*  splice JSmethod removes an item from the array
                                       by passing it's position(index) and how much items will be deleted */
     }
+  },
+  components: {
+    task: require('components/Task.vue').default
   }
 }
 </script>
