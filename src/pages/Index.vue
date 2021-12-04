@@ -8,6 +8,7 @@
       </li> -->
       <task v-for="(task, index) in tasks" :key="task.id"
       :task="task" :index="index">{{task.name}}</task>
+      <!-- by giving each task property an unique id i can now properly access an specific task -->
       <!-- by referencing task name here now i the child component can access this by using a slot -->
       <!-- in vue 3 i have to reference the key, the task and the index that will be used in FOR -->
     </ul>
@@ -20,16 +21,19 @@ export default {
     return {
       tasks: [
         {
+          id: 1,
           name: 'Go to the market',
           dueDate: '2021/12/01',
           dueTime: '19:56'
         },
         {
+          id: 2,
           name: 'Go to the bank',
           dueDate: '2021/12/02',
           dueTime: '14:00'
         },
         {
+          id: 3,
           name: 'Go to the beach',
           dueDate: '2021/12/03',
           dueTime: '9:15'
